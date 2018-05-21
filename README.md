@@ -4,6 +4,7 @@ This project consists in a simple phone catalog app. It has been develop with Re
 The project has been published [here](https://plaso.github.io/phone-catalog-web/).
 
 Back-end is hosted in Heroku in https://phone-catalog.herokuapp.com/
+
 Database is a MongoDB hosted in Mlab.
 
 ## Localhost

@@ -5,9 +5,21 @@ const ApiError = require('../models/api-error.model');
 module.exports.list = (req, res, next) => {
   Phone.find()
     .then(phones => {
-      res.json(phones);
+      res.status(200).json(phones);
     })
     .catch(error => next(error));
+}
+
+module.exports.get = (req, res, next) => {
+  const id = req.params.id;
+  Phone.findById(id)
+    .then(phone => {
+      if (phone) {
+        res.status(200).json(phone)
+      } else {
+        next(new ApiError(`Phone not found`, 404));
+      }
+    }).catch(error => next(error));
 }
 
 module.exports.create = (req, res, next) => {
